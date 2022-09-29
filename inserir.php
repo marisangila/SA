@@ -11,4 +11,7 @@
     $comando->execute();
 
     header("Location:cadastrar.php");
+
+    unset($comando);
+    unset($pdo);
 ?>
