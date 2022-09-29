@@ -1,51 +1,43 @@
 <?php
-    //https://programadoresdepre.com.br/sistema-de-login-com-php-e-mysql-pdo/
-
     include("conexao.php");
 
+    //atribuindo valores dos campos a variaveis.
     $email = $_POST["email"];
     $set_senha = $_POST["senha"];
 
-    $comando = $pdo -> prepare("SELECT senha FROM usuario; WHERE email = :email");  
-    $comando->bindValue(":email",$email);                                                         
-    $comando->execute();
-    $get_senha = $comando->fetchColumn()    
-    
-    if($get_senha == $set_senha){
-        header("Location:pagina_inicial.html");
-    }else{
-        header("Location:login.html");
-    }
-    
-?>
-<?php
-    include("conexao.php");
+    //comando sql.
+    $comando = $pdo->prepare("SELECT pk_usuario, senha_usuario, is_adm_usuario FROM usuario WHERE email_usuario = :email");
 
-    $email = $_POST["email"];
-    $set_senha = $_POST["senha"];
+    //insere valores das variaveis no comando sql.
+    $comando->bindValue(":email", $email);
 
-    $comando = $pdo -> prepare("SELECT id, senha, adm FROM usuario; WHERE email = :email");  
-    $comando->bindValue(":email",$email);                                                         
+    //executa a consulta no banco de dados.
     $comando->execute();
-    if($resultado->rowCount() == 1){
-        $resultado = $comando->fetch()    
-    
-        if(MD5($resultado['senha']) == $set_senha){
-            if(!isset($_SESSION)){
-                session_start()
-                $_SESSION['id'] = $resultado['id'];
-                $_SESSION['senha'] = $resultado['senha'];
-                $_SESSION['adm'] = $resultado['adm'];
-            }
-            header("Location:pagina_inicial.html");
-        }else{
-            //senha incorreta!
-            header("Location:login.html");
+
+    //Se a consulta retornar uma única linha significa que o email inserido existe.
+    if ($comando->rowCount() == 1) {
+        $resultado = $comando->fetch();
+
+        //Comparar senha informada com a senha armazenado no banco de dados.
+        if ($resultado['senha_usuario'] == MD5($set_senha)) {
+            //inicia uma sessão.
+            session_start();
+
+            //insere informações na sessão.
+            $_SESSION['pk_usuario'] = $resultado['pk_usuario'];
+            $_SESSION['senha_usuario'] = $resultado['senha_usuario'];
+            $_SESSION['is_adm_usuario'] = $resultado['is_adm_usuario'];
+            $_SESSION['loggedin'] = true;
+
+            //redireciona para a pagina informada.
+            header("Location:pagina_inicial.php");
+        } else {
+            echo ("Email ou Senha Inválida!");
         }
-    }else{
-        //email incorreto!
-        header("Location:login.html");
+    } else {
+        echo ("Email ou Senha Inválida!");
     }
-    
-    
+    //Fecha declaração e conexão.
+    unset($comando);
+    unset($pdo);
 ?>
