@@ -1,14 +1,6 @@
-CREATE TABLE `usuario` (
-  `pk_usuario` int(11) NOT NULL,
-  `email_usuario` varchar(100) NOT NULL,
-  `senha_usuario` varchar(100) NOT NULL,
-  `is_adm_usuario` bit(1) NOT NULL DEFAULT b'0'
-) 
---
 -- Criar banco de banco de dados chamado: `php`
 --
 -- --------------------------------------------------------
-
 --
 -- Estrutura da tabela `usuario`
 --
@@ -16,8 +8,8 @@ CREATE TABLE `usuario` (
   `pk_usuario` int(11) NOT NULL,
   `email_usuario` varchar(100) NOT NULL,
   `senha_usuario` varchar(100) NOT NULL,
-  `is_adm_usuario` bit(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `is_adm_usuario` bit(1) NOT NULL DEFAULT b'0'
+) 
 --
 -- Índices para tabela `usuario`
 --
