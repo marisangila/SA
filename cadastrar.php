@@ -8,15 +8,21 @@
 </head>
 <body>
     <!--O action determina para onde será enviado os dados do formulário.-->
-    <form action="inserir.php" method="POST">
+    <form action="inserir.php" method="POST" enctype="multipart/form-data">
         <label>Email:</label>
         <br>
         <input type="text" name="email">
         <br>
         <label>Senha:</label>
+        <br>
         <input type="password" name="senha">
+        <br>
+        <!--<input type="file" name="imagem"> 
+        <br>-->
         <!--Necessário um input do tipo submit.-->
-        <input type="submit" value="Cadastrar-se">
+        <input type="submit" value="Cadastrar-se" name="submit">
     </form>
+    <br>
+    <a href="login.html">Entrar</a>
 </body>
 </html>
