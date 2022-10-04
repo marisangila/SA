@@ -20,9 +20,11 @@
 <body>
     <h3>Pagina Inicial</h3>
     <?php
-    //verifica se o usuario conectado é administrador para mostrar a mensagem.
+    //verifica se o usuario conectado é administrador.
     if ($_SESSION['is_adm_usuario'] == 1) {
-        echo '<p> Você é Administrador! </p>';
+        echo '<p> Você é Administrador! </p>
+        <a href="listar_usuario.php">Listar Usuários</a>
+        ';
     }
     ?>
 </body>

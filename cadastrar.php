@@ -14,6 +14,7 @@
         <input type="text" name="email">
         <br>
         <label>Senha:</label>
+        <br>
         <input type="password" name="senha">
         <!--Necessário um input do tipo submit.-->
         <input type="submit" value="Cadastrar-se">
