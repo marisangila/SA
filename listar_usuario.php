@@ -1,10 +1,10 @@
 <?php
-    session_start();
-    // Verifique se o usuário está logado, se não, redirecione-o para uma página de login
-    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-        header("location: login.html");
-        exit;
-    }
+session_start();
+// Verifique se o usuário está logado, se não, redirecione-o para uma página de login
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: login.html");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +18,8 @@
 </head>
 
 <body>
-    <h3>Pagina Inicial</h3>
-    <table>
+    <h3>Listar Usuários:</h3>
+    <table border="1">
         <thead>
             <tr>
                 <th>Código</th>
@@ -27,28 +27,23 @@
                 <th>Nível de Acesso</th>
             </tr>
         </thead>
-        <tbody>;
+        <tbody>
             <?php
-                import("listar.php");
-                //verifica se a variável tem os valores da tabela.
-                if(!empty($resultado)){
-                    //seleciona linha por linha.
-                    foreach($linha as $resultado){
-                        echo '<tr><td>';
-                        echo $linha['pk_usuario'];
-                        echo '</tr></td>';
-
-                        echo '<tr><td>';
-                        echo $linha['email_usuario'];
-                        echo '</tr></td>';
-
-                        echo '<tr><td>';
-                        echo $linha['is_adm_usuario'];
-                        echo '</tr></td>';
-                    }
-                }
+            include("listar.php");
+            //verifica se a variável tem os valores da tabela.
+            if (!empty($resultado)) {
+                //seleciona linha por linha.
+                foreach ($resultado as $linha) {?>
+                    <tr>
+                    <td> <?php echo $linha['pk_usuario']; ?></td>
+                    <td> <?php echo $linha['email_usuario']; ?></td>
+                    <td> <?php echo $linha['is_adm_usuario']; ?></td>
+                    </tr>
+                <?php }
+            }
             ?>
         </tbody>
     </table>
 </body>
+
 </html>

@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <h3>Pagina Inicial</h3>
+    <h3>Bem Vindo!</h3>
     <?php
     //verifica se o usuario conectado é administrador.
     if ($_SESSION['is_adm_usuario'] == 1) {

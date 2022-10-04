@@ -2,7 +2,7 @@
     include("conexao.php");
 
     //comando sql.
-    $comando->prepare('SELECT pk_usuario,email_usuario,is_adm_usuario FROM usuario;');
+    $comando = $pdo->prepare("SELECT pk_usuario,email_usuario,is_adm_usuario, imagem_usuario FROM usuario;");
     //executa a consulta no banco de dados.
     $comando->execute();
 
