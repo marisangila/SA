@@ -10,4 +10,4 @@ Acesse as páginas do website usando a seguinte URL: localhost/php/
 
   Se o nome da sua pasta dentro da pasta htdocs não for php, substitua na url pelo nome da pasta: localhost/nomepasta/
   
-  Não acesse as página clicando diretamente nelas, sempre use o localhost.
+  Não acesse as páginas clicando diretamente nelas, sempre use o localhost.
