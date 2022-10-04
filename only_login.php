@@ -13,6 +13,8 @@
     
     //executa a consulta no banco de dados.
     $comando->execute();
+    
+    //atribui a variável o valor de uma única coluna retorna a partir da consulta ao banco de dados.
     $get_senha = $comando->fetchColumn();    
     
     //Comparar senha informada com a senha armazenado no banco de dados.
