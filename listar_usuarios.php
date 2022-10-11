@@ -2,7 +2,7 @@
     include("conexao.php");
 
     //comando sql.
-    $comando = $pdo->prepare("SELECT pk_usuario,email_usuario,is_adm_usuario, imagem_usuario FROM usuario;");
+    $comando = $pdo->prepare("SELECT pk_usuario, nome_usuario, email_usuario, is_adm_usuario, imagem_usuario FROM usuario;");
     //executa a consulta no banco de dados.
     $comando->execute();
 
@@ -14,4 +14,6 @@
     }else{
         echo("Não há usuários cadastrados.");
     }
+    unset($comando);
+    unset($pdo);
 ?>
