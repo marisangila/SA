@@ -11,7 +11,7 @@ CREATE TABLE `usuario` (
   `is_adm_usuario` bit(1) NOT NULL DEFAULT b'0',
   `imagem_usuario` longtext DEFAULT NULL,
   `nome_usuario` varchar(100) NOT NULL
-) 
+);
 --
 -- Índices para tabela `usuario`
 --
@@ -22,4 +22,3 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `pk_usuario` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
