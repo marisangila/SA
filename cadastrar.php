@@ -9,6 +9,10 @@
 <body>
     <!--O action determina para onde será enviado os dados do formulário.-->
     <form action="inserir.php" method="POST" enctype="multipart/form-data">
+        <label>Nome:</label>
+        <br>
+        <input type="text" name="nome">
+        <br>
         <label>Email:</label>
         <br>
         <input type="text" name="email">
@@ -17,7 +21,7 @@
         <br>
         <input type="password" name="senha">
         <br>
-        <!--<input type="file" name="imagem"> 
+        <input type="file" name="imagem" multiple accept="image/*"> 
         <br>-->
         <!--Necessário um input do tipo submit.-->
         <input type="submit" value="Cadastrar-se" name="submit">
