@@ -10,7 +10,7 @@
     if($comando->rowCount() >= 1)
     {
         //o fetch() transforma o retorno em uma matriz (Use quando você para um registro ou mais, ou seja, uma ou múltiplas linhas da tabela).
-        $resultado = $comando->fetchAll();
+        $lista_usuarios = $comando->fetchAll();
     }else{
         echo("Não há usuários cadastrados.");
     }
