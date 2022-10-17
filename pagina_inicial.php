@@ -27,6 +27,9 @@
         ';
     }
     ?>
+    <br>
+    <a href="editar_usuario.php">Atualizar Perfil</a>
+    <a href="excluir_usuario.php">Excluir Perfil</a>
 </body>
 
 </html>

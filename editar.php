@@ -1,10 +1,18 @@
 <?php
     include("conexao.php");
 
-    $codigo = $_POST['codigo'];
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
 
     //comando sql.
-    $comando->prepare('UPDATE email_usuario,is_adm_usuario FROM usuario WHERE pk_usuario = :codigo;');
+    $comando = $pdo->prepare('UPDATE usuario SET email_usuario = :email,  nome_usuario = :nome WHERE pk_usuario = :pk_usuario');
+    
+    //insere valores das variaveis no comando sql.
+    $comando->bindValue(":nome",$nome);   
+    $comando->bindValue(":email",$email);
+    session_start();
+    $comando->bindValue(":pk_usuario",$_SESSION['pk_usuario']);
+
     //executa a consulta no banco de dados.
     $comando->execute();
 ?>
