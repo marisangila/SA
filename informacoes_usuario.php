@@ -31,6 +31,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <th>Código</th>
                 <th>Email</th>
                 <th>Nível de Acesso</th>
+                <th>Editar</th>
+                <th>Excluir</th>
             </tr>
         </thead>
         <tbody>
@@ -47,6 +49,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         <td> <?php echo $linha['nome_usuario']; ?></td>
                         <td> <?php echo $linha['email_usuario']; ?></td>
                         <td> <?php echo $linha['is_adm_usuario']; ?></td>
+                        <td> <a href="editar.php?codigo=<?php echo $linha['pk_usuario'];?> ">
+                                <input type="button" value="Editar">
+                            </a>
+                        </td>
+                        <td> <a href="excluir_usuario.php?usuario=<?php echo $linha['pk_usuario'];?> ">
+                                <input type="button" value="Editar">
+                            </a>
+                        </td>
                     </tr>
             <?php }
             }
