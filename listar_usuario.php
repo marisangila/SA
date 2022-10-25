@@ -1,4 +1,6 @@
 <?php
+    include("conexao.php");
+
     $codigo = $_GET['codigo'];
 
     //comando sql.
@@ -23,5 +25,3 @@
     //Fecha declaração e conexão.
     unset($comando);
     unset($pdo);
-
-?>

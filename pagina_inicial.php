@@ -27,6 +27,8 @@
         ';
     }
     ?>
+    <br>
+    <a href="desconectar.php">Sair</a>
 </body>
 
 </html>

@@ -2,9 +2,9 @@
     include("conexao.php");
 
     $codigo = $_GET['codigo'];
-
+    
     //comando sql.
-    $comando->prepare('DELETE FROM usuario WHERE pk_usuario = :codigo;');
+    $comando = $pdo->prepare("DELETE FROM usuario WHERE pk_usuario = :codigo;");
 
     //insere valores das variaveis no comando sql.
     $comando->bindValue(':codigo',$codigo);

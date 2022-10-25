@@ -22,7 +22,7 @@
         <input type="password" name="senha">
         <br>
         <input type="file" name="imagem" multiple accept="image/*"> 
-        <br>-->
+        <br>
         <!--Necessário um input do tipo submit.-->
         <input type="submit" value="Cadastrar-se" name="submit">
     </form>

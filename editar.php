@@ -32,9 +32,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <input type="password" name="senha">
         <br>
         <input type="file" name="imagem" multiple accept="image/*"> 
-        <br>-->
+        <br>
         <!--Necessário um input do tipo submit.-->
         <input type="submit" value="Atualizar" name="submit">
     </form>
+    <br>
+    <a href="informacoes_usuario.php">Voltar</a>
 </body>
 </html>

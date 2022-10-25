@@ -53,8 +53,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                                 <input type="button" value="Editar">
                             </a>
                         </td>
-                        <td> <a href="excluir_usuario.php?usuario=<?php echo $linha['pk_usuario'];?> ">
-                                <input type="button" value="Editar">
+                        <td> <a href="excluir_usuario.php?codigo=<?php echo $linha['pk_usuario'];?> ">
+                                <input type="button" value="Excluir">
                             </a>
                         </td>
                     </tr>
@@ -63,6 +63,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             ?>
         </tbody>
     </table>
+    <br>
+    <a href="pagina_inicial.php">Página Inicial</a>
 </body>
 
 </html>
